@@ -1,0 +1,16 @@
+<p>GRAFICA TIPO GAUGE</p>
+<ngx-charts-gauge
+  [view]="view"
+  scheme="fire"
+  [results]="single"
+  [legend]="legend"
+  (select)="onSelect($event)"
+  (activate)="onActivate($event)"
+  (deactivate)="onDeactivate($event)"
+  >
+</ngx-charts-gauge>
+
+<!-- =El esquema (colorScheme) de colores debe ser modificado en base a los preestablecidos por el framework
+     puede revisar en : https://github.com/swimlane/ngx-charts/blob/master/projects/swimlane/ngx-charts/src/lib/utils/color-sets.ts 
+     en su lugar usar la funcion customColors
+     =El parametro legendPosition no acepta el parametro pasado-->
