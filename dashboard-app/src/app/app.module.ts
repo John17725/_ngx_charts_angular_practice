@@ -11,6 +11,20 @@ import { GrafGaugeComponent } from './graf-gauge/graf-gauge.component';
 import { GrafLineChartComponent } from './graf-line-chart/graf-line-chart.component';
 import { GrafBarChartComponent } from './graf-bar-chart/graf-bar-chart.component';
 
+import { Observable } from 'rxjs';
+
+import {
+  IMqttMessage,
+  MqttModule,
+  IMqttServiceOptions
+} from 'ngx-mqtt';
+
+export const MQTT_SERVICE_OPTIONS: IMqttServiceOptions = {
+  hostname: '192.168.0.11',
+  port: 1883,
+  path: '/mqtt'
+};
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -23,7 +37,8 @@ import { GrafBarChartComponent } from './graf-bar-chart/graf-bar-chart.component
     AppRoutingModule,
     FormsModule,
     NgxChartsModule,
-    BrowserAnimationsModule 
+    BrowserAnimationsModule,
+    MqttModule.forRoot(MQTT_SERVICE_OPTIONS)
   ],
   providers: [],
   bootstrap: [AppComponent]
